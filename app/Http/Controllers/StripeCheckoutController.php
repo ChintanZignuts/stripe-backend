@@ -27,8 +27,8 @@ class StripeCheckoutController extends Controller
             'payment_method_types' => ['card'],
             'line_items' => $lineItems,
             'mode' => 'payment',
-            'success_url' => url('/payment/success') . '?session_id={CHECKOUT_SESSION_ID}',
-            'cancel_url' => url('/payment/cancel'),
+            'success_url' => 'https://your-frontend.com/payment/success?session_id={CHECKOUT_SESSION_ID}',
+            'cancel_url' => 'https://your-frontend.com/payment/cancel',
         ]);
 
         return response()->json(['url' => $session->url]);
