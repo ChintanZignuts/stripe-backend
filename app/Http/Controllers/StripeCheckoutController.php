@@ -9,7 +9,7 @@ class StripeCheckoutController extends Controller
 {
     public function createSession(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
 
         // Example: Fixed amount or dynamically from cart/order
         $lineItems = [[
